@@ -1,0 +1,15 @@
+Import libraries
+
+Define functions
+
+Main loop:
+    Ask the user for inputs
+    Validate inputs
+    Repeat until all inputs are complete
+
+Confirm with the user that their inputs are correct
+
+If inputs are not correct:
+    Go to main loop
+Else:
+    Confirm and leave a generic thanks/enjoy your trip message
