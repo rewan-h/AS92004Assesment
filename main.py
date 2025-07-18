@@ -5,7 +5,7 @@ MEAL_INDEX = 4
 
 ANSWER_LIST_SIZE = 5
 
-LIST_ZERO_SYMBOL = 0
+LIST_ZERO_SYMBOL = None
 
 questions = [
     {"question": "Hello! What is your name?: ", "responseType": str},
