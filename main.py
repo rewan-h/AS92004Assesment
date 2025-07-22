@@ -11,6 +11,8 @@ LIST_ZERO_SYMBOL = None
 AGE_LOWER_LIMIT = 5
 AGE_UPPER_LIMIT = 17
 
+CAMP_LEADER_AGE = 15
+
 questions = [
     {"question": "Hello! What is your name?: ", "responseType": str},
     {"question": "What's your age?: ", "responseType": int},
@@ -33,7 +35,7 @@ while not answersComplete:
             if (int(temp) < AGE_LOWER_LIMIT or int(temp) > AGE_UPPER_LIMIT) and currentQuestion == AGE_INDEX: # Age check
                 print(f"You must be 5-17 years of age to attend this camp {answers[NAME_INDEX]}.")
                 break
-            elif (int(temp) not in (1,2,3)) and currentQuestion == CAMP_INDEX:
+            elif (int(temp) not in (1,2,3)) and currentQuestion == CAMP_INDEX: # 1,2 and 3 represent each camp
                 print("You must select either: 1, 2 or 3")
             else:
                 answers[currentQuestion] = int(temp)
@@ -50,8 +52,24 @@ while not answersComplete:
             print("Sorry that input was invalid please try again.")
 
     if LIST_ZERO_SYMBOL not in answers:
-        confirmation = input(f"Confirm you are {answers[NAME_INDEX]}, age {answers[AGE_INDEX]} who has chosen camp {answers[CAMP_INDEX]}"
-                             f" with {answers[MEAL_INDEX]} meals. (Y/n): ")
+
+        if answers[AGE_INDEX] >= CAMP_LEADER_AGE: # Executes if inputted age is greater than 15
+            campLeader = input("You are eligible to be the camp leader! Would you like to sign up as one? (y/n): ")
+            if campLeader.lower() == "y":
+                campLeader = True
+            else:
+                del campLeader
+
+        try:
+            campLeader
+        except NameError:
+            confirmation = input(
+                f"Confirm you are {answers[NAME_INDEX]}, age {answers[AGE_INDEX]} who has chosen camp {answers[CAMP_INDEX]}"
+                f" with {answers[MEAL_INDEX]} meals. (Y/n): ")
+        else:
+            confirmation = input(
+                f"Confirm you are {answers[NAME_INDEX]}, age {answers[AGE_INDEX]} who has chosen camp {answers[CAMP_INDEX]}"
+                f" with {answers[MEAL_INDEX]} meals and has chosen to be camp leader. (Y/n): ")
 
         if confirmation.lower() == "y":
             print("Thank you for confirming! Enjoy your trip!")

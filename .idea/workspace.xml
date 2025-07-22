@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50857282-8ed1-4a6b-96e3-e05ed521c6b0" name="Changes" comment="Replaced LIST_ZERO_SYMBOL = 0 with None. Fixes #1">
+    <list default="true" id="50857282-8ed1-4a6b-96e3-e05ed521c6b0" name="Changes" comment="Input verification">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -104,7 +104,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752801059683</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Input verification">
+      <option name="closed" value="true" />
+      <created>1752806208076</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1752806208077</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -112,6 +120,7 @@
     <MESSAGE value="Very crude version it works but with minimal checks NEEDS to be expanded" />
     <MESSAGE value="Added comments and removed magic numbers" />
     <MESSAGE value="Replaced LIST_ZERO_SYMBOL = 0 with None. Fixes #1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Replaced LIST_ZERO_SYMBOL = 0 with None. Fixes #1" />
+    <MESSAGE value="Input verification" />
+    <option name="LAST_COMMIT_MESSAGE" value="Input verification" />
   </component>
 </project>
