@@ -4,7 +4,6 @@ CAMP_INDEX = 2
 SHUTTLE_INDEX = 3
 MEAL_INDEX = 4
 
-ANSWER_LIST_SIZE = 5
 
 LIST_ZERO_SYMBOL = None
 
@@ -20,6 +19,8 @@ questions = [
     {"question": "Would you like to take the shuttle bus ($80)? (y/n): ", "responseType": str},
     {"question": "What meal option would you like? (standard/vegetarian/vegan): ", "responseType": str}
 ]
+
+ANSWER_LIST_SIZE = len(questions)
 
 answers = [LIST_ZERO_SYMBOL] * ANSWER_LIST_SIZE # Fill the answers array with ANSWER_LIST_SIZE amount of LIST_ZERO_SYMBOL symbols representing each questions answer
 answersComplete = False
@@ -56,20 +57,18 @@ while not answersComplete:
         if answers[AGE_INDEX] >= CAMP_LEADER_AGE: # Executes if inputted age is greater than 15
             campLeader = input("You are eligible to be the camp leader! Would you like to sign up as one? (y/n): ")
             if campLeader.lower() == "y":
-                campLeader = True
+                confirmation = input(
+                    f"Confirm you are {answers[NAME_INDEX]}, age {answers[AGE_INDEX]} who has chosen camp {answers[CAMP_INDEX]}"
+                    f" with {answers[MEAL_INDEX]} meals and has chosen to be camp leader. (Y/n): ")
             else:
-                del campLeader
-
-        try:
-            campLeader
-        except NameError:
-            confirmation = input(
-                f"Confirm you are {answers[NAME_INDEX]}, age {answers[AGE_INDEX]} who has chosen camp {answers[CAMP_INDEX]}"
-                f" with {answers[MEAL_INDEX]} meals. (Y/n): ")
+                confirmation = input(
+                    f"Confirm you are {answers[NAME_INDEX]}, age {answers[AGE_INDEX]} who has chosen camp {answers[CAMP_INDEX]}"
+                    f" with {answers[MEAL_INDEX]} meals. (Y/n): ")
         else:
             confirmation = input(
                 f"Confirm you are {answers[NAME_INDEX]}, age {answers[AGE_INDEX]} who has chosen camp {answers[CAMP_INDEX]}"
-                f" with {answers[MEAL_INDEX]} meals and has chosen to be camp leader. (Y/n): ")
+                f" with {answers[MEAL_INDEX]} meals. (Y/n): ")
+
 
         if confirmation.lower() == "y":
             print("Thank you for confirming! Enjoy your trip!")
