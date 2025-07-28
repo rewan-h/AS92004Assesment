@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50857282-8ed1-4a6b-96e3-e05ed521c6b0" name="Changes" comment="Input verification" />
+    <list default="true" id="50857282-8ed1-4a6b-96e3-e05ed521c6b0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +112,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752806208077</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Changed implementation of camp leader check and automated ANSWER_LIST_SIZE">
+      <option name="closed" value="true" />
+      <created>1753306531736</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1753306531736</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -118,6 +129,7 @@
     <MESSAGE value="Added comments and removed magic numbers" />
     <MESSAGE value="Replaced LIST_ZERO_SYMBOL = 0 with None. Fixes #1" />
     <MESSAGE value="Input verification" />
-    <option name="LAST_COMMIT_MESSAGE" value="Input verification" />
+    <MESSAGE value="Changed implementation of camp leader check and automated ANSWER_LIST_SIZE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed implementation of camp leader check and automated ANSWER_LIST_SIZE" />
   </component>
 </project>

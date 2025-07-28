@@ -4,7 +4,6 @@ CAMP_INDEX = 2
 SHUTTLE_INDEX = 3
 MEAL_INDEX = 4
 
-
 LIST_ZERO_SYMBOL = None
 
 AGE_LOWER_LIMIT = 5
@@ -19,6 +18,13 @@ questions = [
     {"question": "Would you like to take the shuttle bus ($80)? (y/n): ", "responseType": str},
     {"question": "What meal option would you like? (standard/vegetarian/vegan): ", "responseType": str}
 ]
+
+campDetails = [
+    {"camp": 1, "cost": 800, "length": 5, "difficulty": "easy"},
+    {"camp": 2, "cost": 400, "length": 3, "difficulty": "moderate"},
+    {"camp": 3, "cost": 900, "length": 4, "difficulty": "difficult"}
+]
+currentCost = 0
 
 ANSWER_LIST_SIZE = len(questions)
 
@@ -46,6 +52,8 @@ while not answersComplete:
         if currentQuestion == NAME_INDEX and temp.lower().isalpha():
             answers[currentQuestion] = temp
         elif currentQuestion == SHUTTLE_INDEX and temp.lower() in ("y", "n"):
+            if temp.lower() == "y":
+                currentCost += 80
             answers[currentQuestion] = temp
         elif currentQuestion == MEAL_INDEX and temp.lower() in ("standard", "vegetarian", "vegan"):
             answers[currentQuestion] = temp
@@ -54,20 +62,22 @@ while not answersComplete:
 
     if LIST_ZERO_SYMBOL not in answers:
 
+        currentCost += campDetails[answers[CAMP_INDEX]-1]["cost"] # Minus 1 otherwise we get an index error as this returns a non-zeroed index
+
         if answers[AGE_INDEX] >= CAMP_LEADER_AGE: # Executes if inputted age is greater than 15
             campLeader = input("You are eligible to be the camp leader! Would you like to sign up as one? (y/n): ")
             if campLeader.lower() == "y":
                 confirmation = input(
                     f"Confirm you are {answers[NAME_INDEX]}, age {answers[AGE_INDEX]} who has chosen camp {answers[CAMP_INDEX]}"
-                    f" with {answers[MEAL_INDEX]} meals and has chosen to be camp leader. (Y/n): ")
+                    f" with {answers[MEAL_INDEX]} meals and has chosen to be camp leader (Total cost: ${currentCost}). (Y/n): ")
             else:
                 confirmation = input(
                     f"Confirm you are {answers[NAME_INDEX]}, age {answers[AGE_INDEX]} who has chosen camp {answers[CAMP_INDEX]}"
-                    f" with {answers[MEAL_INDEX]} meals. (Y/n): ")
+                    f" with {answers[MEAL_INDEX]} meals (Total cost: ${currentCost}). (Y/n): ")
         else:
             confirmation = input(
                 f"Confirm you are {answers[NAME_INDEX]}, age {answers[AGE_INDEX]} who has chosen camp {answers[CAMP_INDEX]}"
-                f" with {answers[MEAL_INDEX]} meals. (Y/n): ")
+                f" with {answers[MEAL_INDEX]} meals (Total cost: ${currentCost}). (Y/n): ")
 
 
         if confirmation.lower() == "y":
@@ -76,5 +86,7 @@ while not answersComplete:
         else:
             print("Ok. Lets try that again!\n------------------------")
             answers = [LIST_ZERO_SYMBOL] * ANSWER_LIST_SIZE # Reset the answers list for the program to run again
+            currentCost = 0
 
 print(answers)
+print(currentCost)
