@@ -1,3 +1,6 @@
+# Children's camp selector
+# GitHub: https://github.com/rewan-h/AS92004Assesment
+
 NAME_INDEX = 0
 AGE_INDEX = 1
 CAMP_INDEX = 2
@@ -20,9 +23,9 @@ questions = [
 ]
 
 campDetails = [
-    {"camp": 1, "cost": 800, "length": 5, "difficulty": "easy"},
-    {"camp": 2, "cost": 400, "length": 3, "difficulty": "moderate"},
-    {"camp": 3, "cost": 900, "length": 4, "difficulty": "difficult"}
+    {"camp": 1, "name": "Cultural Immersion", "cost": 800, "length": 5, "difficulty": "Easy"},
+    {"camp": 2, "name": "Kayaking & Pancakes", "cost": 400, "length": 3, "difficulty": "Moderate"},
+    {"camp": 3, "name": "Mountain Biking", "cost": 900, "length": 4, "difficulty": "Difficult"}
 ]
 currentCost = 0
 
@@ -67,17 +70,21 @@ while not answersComplete:
         if answers[AGE_INDEX] >= CAMP_LEADER_AGE: # Executes if inputted age is greater than 15
             campLeader = input("You are eligible to be the camp leader! Would you like to sign up as one? (y/n): ")
             if campLeader.lower() == "y":
+                # Confirmation message including the leadership bit
                 confirmation = input(
-                    f"Confirm you are {answers[NAME_INDEX]}, age {answers[AGE_INDEX]} who has chosen camp {answers[CAMP_INDEX]}"
-                    f" with {answers[MEAL_INDEX]} meals and has chosen to be camp leader (Total cost: ${currentCost}). (Y/n): ")
+                    f"Confirm you are {answers[NAME_INDEX]}, age {answers[AGE_INDEX]} who has chosen {campDetails[answers[CAMP_INDEX]-1]["name"]} "
+                    f"(Difficulty: {campDetails[answers[CAMP_INDEX]-1]["difficulty"]} Length: {campDetails[answers[CAMP_INDEX]-1]["length"]} days)\n"
+                    f"with {answers[MEAL_INDEX]} meals and has chosen to be camp leader (Total cost: ${currentCost}). (Y/n): ")
             else:
                 confirmation = input(
-                    f"Confirm you are {answers[NAME_INDEX]}, age {answers[AGE_INDEX]} who has chosen camp {answers[CAMP_INDEX]}"
-                    f" with {answers[MEAL_INDEX]} meals (Total cost: ${currentCost}). (Y/n): ")
+                    f"Confirm you are {answers[NAME_INDEX]}, age {answers[AGE_INDEX]} who has chosen {campDetails[answers[CAMP_INDEX]-1]["name"]} "
+                    f"(Difficulty: {campDetails[answers[CAMP_INDEX]-1]["difficulty"]} Length: {campDetails[answers[CAMP_INDEX]-1]["length"]} days)\n"
+                    f"with {answers[MEAL_INDEX]} meals (Total cost: ${currentCost}). (Y/n): ")
         else:
             confirmation = input(
-                f"Confirm you are {answers[NAME_INDEX]}, age {answers[AGE_INDEX]} who has chosen camp {answers[CAMP_INDEX]}"
-                f" with {answers[MEAL_INDEX]} meals (Total cost: ${currentCost}). (Y/n): ")
+                f"Confirm you are {answers[NAME_INDEX]}, age {answers[AGE_INDEX]} who has chosen {campDetails[answers[CAMP_INDEX]-1]["name"]} "
+                f"(Difficulty: {campDetails[answers[CAMP_INDEX]-1]["difficulty"]} Length: {campDetails[answers[CAMP_INDEX]-1]["length"]} days)\n"
+                f"with {answers[MEAL_INDEX]} meals (Total cost: ${currentCost}). (Y/n): ")
 
 
         if confirmation.lower() == "y":
