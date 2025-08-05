@@ -1,6 +1,8 @@
 # Children's camp selector
 # GitHub: https://github.com/rewan-h/AS92004Assesment
 
+
+# Constants
 NAME_INDEX = 0
 AGE_INDEX = 1
 CAMP_INDEX = 2
@@ -90,10 +92,8 @@ while not answersComplete:
         if confirmation.lower() == "y":
             print("Thank you for confirming! Enjoy your trip!")
             answersComplete = True
+            print(f"\n\n{answers[NAME_INDEX]}, {answers[AGE_INDEX]}, has chosen the {campDetails[answers[CAMP_INDEX]-1]["name"]} camp, with {answers[MEAL_INDEX]} meals. Total cost: ${currentCost}")
         else:
             print("Ok. Lets try that again!\n------------------------")
             answers = [LIST_ZERO_SYMBOL] * ANSWER_LIST_SIZE # Reset the answers list for the program to run again
             currentCost = 0
-
-print(answers)
-print(currentCost)
