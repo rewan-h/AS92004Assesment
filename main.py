@@ -54,7 +54,7 @@ while not answersComplete:
         except ValueError:
             print("You must enter a valid number")
     else:
-        if currentQuestion == NAME_INDEX and temp.lower().isalpha():
+        if currentQuestion == NAME_INDEX and temp.lower().replace(" ","").isalpha(): # The isalpha() check excludes spaces so if someone includes a last name we need to replace the spaces
             answers[currentQuestion] = temp
         elif currentQuestion == SHUTTLE_INDEX and temp.lower() in ("y", "n"):
             if temp.lower() == "y":

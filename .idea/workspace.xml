@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50857282-8ed1-4a6b-96e3-e05ed521c6b0" name="Changes" comment="Finishing touches">
+    <list default="true" id="50857282-8ed1-4a6b-96e3-e05ed521c6b0" name="Changes" comment="Fixes #3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753748271554</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixes #3">
+      <option name="closed" value="true" />
+      <created>1754363255637</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1754363255637</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -185,6 +192,7 @@
     <MESSAGE value="Changed implementation of camp leader check and automated ANSWER_LIST_SIZE" />
     <MESSAGE value="Cost confirmation implementation. Fixes #2" />
     <MESSAGE value="Finishing touches" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finishing touches" />
+    <MESSAGE value="Fixes #3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixes #3" />
   </component>
 </project>
